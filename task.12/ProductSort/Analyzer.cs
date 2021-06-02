@@ -11,7 +11,7 @@ namespace task._12.ProductSort
         public HeavyQueue heavyQueue = new HeavyQueue();
         public LightQueue lightQueue = new LightQueue();
 
-        public void Sorting(NewProduct product)
+        public void Sorting(Product product)
         {
 
             if (product.Weight > 50)

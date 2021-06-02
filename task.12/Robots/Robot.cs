@@ -8,6 +8,5 @@ namespace task._12
     {
         public abstract int Carrying { get; }
         
-
     }
 }

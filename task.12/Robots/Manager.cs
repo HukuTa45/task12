@@ -7,40 +7,64 @@ using task._12.Robots;
 
 namespace task._12
 {
-    public class Manager 
+    public class Manager
     {
         public Analyzer analyzer = new Analyzer();
-        string robotName;
+        private string _robotName;
         public Storage storage = new Storage();
 
-        public void HeavyRobotCreate() {
+        public void GetFromStorage(int id) {
+
+            var weightTakenProduct = storage.Products[id];
+
+            if (weightTakenProduct > 50)
+            {
+                _robotName = "Storage - HeavyRobot_" + id;
+                new HeavyRobot(_robotName);
+                Console.WriteLine($"Робот {_robotName} был создан и забрал товар #{id} весом {weightTakenProduct} со склада");
+                storage.GetProduct(id);
+            }
+            else
+            {
+                _robotName = "Storage - LightRobot_" + id;
+                new LightRobot(_robotName);
+                Console.WriteLine($"Робот {_robotName} был создан и забрал товар #{id} весом {weightTakenProduct} со склада");
+                storage.GetProduct(id);
+            }
+
+        }
+
+        public void HeavyQueueClear() {
             int count = analyzer.heavyQueue.ProductHeavyQueue.Count;
+            var heavyQueue = analyzer.heavyQueue.ProductHeavyQueue;
 
             for (int i = 0; i<count; i++)
             {
-                robotName = "heavyRobot_" + i;
+                _robotName = "heavyRobot_" + i;
 
-                new HeavyRobot(robotName);
+                new HeavyRobot(_robotName);
              
-                Console.WriteLine($"Робот {robotName} был создан и забрал из очереди товар весом {analyzer.heavyQueue.ProductHeavyQueue.Peek().Weight} на склад");
-                storage.Add(analyzer.heavyQueue.ProductHeavyQueue.Peek());
+                Console.WriteLine($"Робот {_robotName} был создан и забрал из очереди товар весом {heavyQueue.Peek().Weight}");
+                storage.Add(heavyQueue.Peek());
     
-                analyzer.heavyQueue.ProductHeavyQueue.Dequeue();               
+                heavyQueue.Dequeue();               
             }
         }
 
-        public void LigtRobotCreate()
+        public void LigtQueueClear()
         {
             int count = analyzer.lightQueue.ProductLightQueue.Count;
+            var lightQueue = analyzer.lightQueue.ProductLightQueue;
+
             for (int i = 0; i < count; i++)
             {
-                robotName = "lightRobot_" + i;
+                _robotName = "lightRobot_" + i;
 
-                new HeavyRobot(robotName);
+                new HeavyRobot(_robotName);
 
-                Console.WriteLine($"Робот {robotName} был создан и забрал из очереди товар весом {analyzer.lightQueue.ProductLightQueue.Peek().Weight} на склад");
-                storage.Add(analyzer.lightQueue.ProductLightQueue.Peek());
-                analyzer.lightQueue.ProductLightQueue.Dequeue();                
+                Console.WriteLine($"Робот {_robotName} был создан и забрал из очереди товар весом {lightQueue.Peek().Weight}");
+                storage.Add(lightQueue.Peek());
+                lightQueue.Dequeue();                
             }
         }
     }

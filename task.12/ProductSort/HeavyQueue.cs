@@ -7,7 +7,7 @@ namespace task._12.ProductStorage
 {
     public class HeavyQueue
     {
-        public Queue<Product> ProductHeavyQueue = new Queue<Product>();
+        public Queue<NewProduct> ProductHeavyQueue = new Queue<NewProduct>();
 
         public void AddQueueHeavy(NewProduct product)
         {

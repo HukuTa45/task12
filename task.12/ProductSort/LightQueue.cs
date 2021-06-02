@@ -7,7 +7,7 @@ namespace task._12.ProductStorage
 {
     public class LightQueue
     {
-        public Queue<Product> ProductLightQueue = new Queue<Product>();
+        public Queue<NewProduct> ProductLightQueue = new Queue<NewProduct>();
 
         public void AddQueueLight(NewProduct product)
         {

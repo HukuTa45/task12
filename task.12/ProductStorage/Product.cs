@@ -12,7 +12,7 @@ namespace task._12
         public Product(int id, double weight)
         {
             Id = id;
-                Weight = weight;
+            Weight = weight;
         }
 
        

@@ -9,10 +9,10 @@ namespace task._12
         {
             Manager manager = new Manager();
             
-            var storage = new Storage();
+            
             NewProduct[] p = { 
                 new NewProduct(1, 55),
-                new NewProduct(1, 55),               
+                new NewProduct(12, 55),               
                 new NewProduct(2, 3), 
                 new NewProduct(3, 3), 
                 new NewProduct(4, 85) };
@@ -23,7 +23,10 @@ namespace task._12
             manager.HeavyRobotCreate();
             manager.LigtRobotCreate();
 
-            
+            foreach(var roduct in manager.storage.Products)
+            {
+                Console.WriteLine(roduct.Key + " " + roduct.Value);
+            }
             
         }
     }

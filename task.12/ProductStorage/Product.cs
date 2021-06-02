@@ -15,6 +15,6 @@ namespace task._12
             Weight = weight;
         }
 
-       
+
     }
 }

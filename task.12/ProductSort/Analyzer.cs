@@ -13,7 +13,6 @@ namespace task._12.ProductSort
 
         public void Sorting(Product product)
         {
-
             if (product.Weight > 50)
                 heavyQueue.AddQueueHeavy(product);
             else

@@ -9,16 +9,16 @@ namespace task._12
         {
             Manager manager = new Manager();
                        
-            Product[] p = { 
+            Product[] product = { 
                 new Product(1, 55),
                 new Product(12, 55),               
                 new Product(2, 3), 
                 new Product(3, 3), 
                 new Product(4, 85) };
 
-            for (int i = 0;i<p.Length; i++)
+            for (int i = 0;i<product.Length; i++)
             {
-                manager.analyzer.Sorting(p[i]);
+                manager.analyzer.Sorting(product[i]);
             }
 
             manager.HeavyQueueClear();

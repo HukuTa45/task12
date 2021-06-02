@@ -19,14 +19,14 @@ namespace task._12
 
             if (weightTakenProduct > 50)
             {
-                _robotName = "Storage - HeavyRobot_" + id;
+                _robotName = "/Storage/ HeavyRobot_" + id;
                 new HeavyRobot(_robotName);
                 Console.WriteLine($"Робот {_robotName} был создан и забрал товар #{id} весом {weightTakenProduct} со склада");
                 storage.GetProduct(id);
             }
             else
             {
-                _robotName = "Storage - LightRobot_" + id;
+                _robotName = "/Storage/ LightRobot_" + id;
                 new LightRobot(_robotName);
                 Console.WriteLine($"Робот {_robotName} был создан и забрал товар #{id} весом {weightTakenProduct} со склада");
                 storage.GetProduct(id);

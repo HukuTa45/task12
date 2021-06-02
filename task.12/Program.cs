@@ -32,6 +32,7 @@ namespace task._12
             Console.WriteLine("---------------");
             manager.GetFromStorage(1);
             manager.GetFromStorage(12);
+            manager.GetFromStorage(2);
 
 
             foreach (var roduct in manager.storage.Products)
